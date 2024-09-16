@@ -6,7 +6,7 @@ set Use years in output instead of seconds     = true
 set Nonlinear solver scheme                    = single Advection, iterated defect correction Stokes
 set CFL number                                 = 0.5
 set Maximum time step                          = 5000
-set Output directory                           = weak_runs/parsons_sclater/mei_weakened
+set Output directory                           = test_weakness/stein_stein/450kJ_mol
 set Timing output frequency                    = 1
 set Pressure normalization                     = no
 set Nonlinear solver tolerance                 = 1e-3
@@ -122,7 +122,7 @@ subsection Boundary temperature model
   set Fixed temperature boundary indicators = top, bottom
   set List of model names = initial temperature
   subsection Initial temperature
-    set Maximal temperature = 1623
+    set Maximal temperature = 1723
     set Minimal temperature = 293
   end
 end
@@ -130,8 +130,8 @@ end
 subsection Initial temperature model
   set Model name = plate cooling
   subsection Plate cooling
-    set Lithosphere thickness        = 125e3
-    set Mantle temperature           = 1623
+    set Lithosphere thickness        = 95e3
+    set Mantle temperature           = 1723
     set Surface temperature          = 293
     set Thermal diffusivity          = 0.8043758e-6
     set Data directory               = ../../../data_files/
@@ -149,14 +149,16 @@ subsection Material model
     set Include Peierls creep                     = true
     set Peierls creep flow law                    = exact
     set Peierls strain rate residual tolerance    = 1e-17
-    set Maximum Peierls strain rate iterations    = 40
-    set Prefactors for Peierls creep              = 1.4e-19
-    set Stress exponents for Peierls creep        = 2.0
-    set Activation energies for Peierls creep     = 190e3
+    set Maximum Peierls strain rate iterations    = 400
+    set Prefactors for Peierls creep              = 1e6
+    set Stress exponents for Peierls creep        = 0
+    set Activation energies for Peierls creep     = 450e3
     set Activation volumes for Peierls creep      = 0
-    set Peierls stresses                          = 5.9e9
+    set Peierls stresses                          = 3.8e9
     set Peierls glide parameters p                = 0.5
-    set Peierls glide parameters q                = 1.0
+    set Peierls glide parameters q                = 2
+    set Cutoff stresses for Peierls creep         = 1e6
+    set Apply strict stress cutoff for Peierls creep = true
 
     # High Temperature Creep Parameters
     set Activation energies for dislocation creep = 530e3
@@ -172,7 +174,7 @@ subsection Material model
     set Stress exponents for dislocation creep    = 3.5
     set Viscous flow law                          = dislocation
 
-
+    # set Include viscoelasticity                   = true
     set Densities                                 = 3330
     set Elastic shear moduli                      = 3.3e10
     set Use fixed elastic time step               = true
@@ -216,7 +218,7 @@ subsection Postprocess
 end
 
 subsection Checkpointing
-  set Steps between checkpoint = 25
+  set Steps between checkpoint = 50
 end
 
 subsection Termination criteria
