@@ -1,0 +1,35 @@
+This repository is assosciated with the publication
+
+*Magma-Assisted Flexure of Hawaiian Lithosphere Inferred From Three-Dimensional Models of Lithospheric Flexure Constrained by Active Souce Seismic Data*
+
+by
+
+Douglas, D.,
+Ito, G.,
+Boston, B.,
+Dunn, R.,
+Naliboff, J.,
+Wessel, P.,
+Watts, A. B.,
+Shillington, D.,
+Cilli, P.,
+
+which is currently in review.
+
+# Software
+Our numerical simulations were run using the open source geodynamics software ASPECT ([https://aspect.geodynamics.org/](https://aspect.geodynamics.org/)). Specifically, we utilize a branch of the developmental versions of ASPECT (2.6.0-pre) with a copy of the the source code included in this repository.
+
+# Overview
+The source code and all input files required to reproduce the results from Douglas et al., (2024), "Magma-Assisted Flexure of Hawaiian Lithosphere Inferred From Three-Dimensional Models of Lithospheric Flexure Constrained by Active Souce Seismic Data" submitted to *JGR: Solid Earth* is contained within this repository. The contents of each directory is outlined below.
+
+## island_growth.gif
+An animation showcasing how the Hawaiian Islands are grown in our models.
+
+## ASPECT_parameter_files
+Includes the input files needed to reproduce the ASPECT models.
+
+## ASPECT_source
+Contains the source code for the version of ASPECT used to run the models. A guide to compiling ASPECT can be found in the ASPECT manual at ([https://aspect-documentation.readthedocs.io/en/latest/user/install/index.html](https://aspect-documentation.readthedocs.io/en/latest/user/install/index.html)).
+
+## data_files
+Contains ASCII data files which are read by ASPECT during model runs to prescribe the topographic load of the growing Hawaiian Islands (aspect_traction_files), the initial thermal state of the model, and to heat the lithosphere locally beneath the Hawaiian Islands (aspect_heating_files). Within aspect_heating_files, there are 3 directories which prescribe heating equivalent to a 30 Myr reduction in seafloor age, a 50 Myr reduction in seafloor age, or a 70 Myr reduction in seafloor age.
