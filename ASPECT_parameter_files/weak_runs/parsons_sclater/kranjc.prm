@@ -33,7 +33,6 @@ subsection Solver parameters
 end
 
 
-# Model Geometry
 # Model Geometry, a 1200 km x 1500 km x 1200 km box
 subsection Geometry model
   set Model name = box
@@ -57,7 +56,7 @@ subsection Compositional fields
   set Names of fields = ve_stress_xx, ve_stress_yy, ve_stress_zz, ve_stress_xy, ve_stress_xz, ve_stress_yz, background_material
 end
 
-# Mesh Refinement 
+
 # Mesh Refinement, refine the mesh within the lithosphere and along the ridge axis
 subsection Mesh refinement
   set Initial adaptive refinement              = 2
