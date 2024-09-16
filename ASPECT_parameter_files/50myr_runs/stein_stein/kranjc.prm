@@ -6,7 +6,7 @@ set Use years in output instead of seconds     = true
 set Nonlinear solver scheme                    = single Advection, iterated defect correction Stokes
 set CFL number                                 = 0.5
 set Maximum time step                          = 5000
-set Output directory                           = new_mesh_runs/50myr_runs/stein_stein/kranjc_50myr
+set Output directory                           = 50myr_runs/stein_stein/kranjc_50myr
 set Timing output frequency                    = 1
 set Pressure normalization                     = no
 set Nonlinear solver tolerance                 = 1e-3
@@ -105,7 +105,7 @@ subsection Boundary traction model
     set Background density                = 0
 
     subsection Ascii data model
-      set Data directory              = /home/900358141/hawaii_stuff/aspect_traction_files/
+      set Data directory              = ../../../data_files/aspect_traction_files/
       set Data file name              = box_3d_%s.%d.txt
       set Data file time step         = 5000
       set Decreasing file order       = true
@@ -134,7 +134,7 @@ subsection Initial temperature model
     set Mantle temperature           = 1723
     set Surface temperature          = 293
     set Thermal diffusivity          = 0.8043758e-6
-    set Data directory               = /home/900358141/hawaii_stuff/
+    set Data directory               = ../../../data_files/
     set Data file name               = initial_temperature_agemap.txt
   end
 end
@@ -145,7 +145,7 @@ subsection Heating model
     set Lithosphere thickness = 95e3
   end
   subsection Ascii data model
-    set Data file name = /home/900358141/hawaii_stuff/aspect_heating_files/50myr_reduction/box_3d_%s.%d.txt
+    set Data file name = ../../../data_files/aspect_heating_files/50myr_reduction/box_3d_%s.%d.txt
     set First data file number = 801
     set Data file time step = 5e3
     set Decreasing file order = true
