@@ -83,13 +83,11 @@ subsection Mesh deformation
   end
 end
 
-# Boundary Velocity Model
 # Boundary Velocity Model.
 subsection Boundary velocity model
   set Zero velocity boundary indicators = bottom
 end
 
-# Boundary Traction Model
 
 # Boundary Traction Model. Impose tractions of the top boundary for the growing Hawaiian Islands, and open the 4 side boundaries
 subsection Boundary traction model
