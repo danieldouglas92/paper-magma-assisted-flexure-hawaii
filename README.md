@@ -23,10 +23,10 @@ Our numerical simulations were run using the open source geodynamics software AS
 The source code and all input files required to reproduce the results from Douglas et al., (2024), "Magma-Assisted Flexure of Hawaiian Lithosphere Inferred From Three-Dimensional Models of Lithospheric Flexure Constrained by Active Souce Seismic Data" submitted to *JGR: Solid Earth* is contained within this repository. The contents of each directory is outlined below.
 
 ## island_growth.gif
-An animation showcasing how the Hawaiian Islands are grown in our models.
+An animation showcasing how the Hawaiian Islands are grown in the ASPECT models.
 
 ## ASPECT_parameter_files
-Includes the input files needed to reproduce the ASPECT models.
+Includes the input files needed to reproduce the ASPECT models. The .prm files are formatted in such a way that once ASPECT has been built, they can be run consistently within the repository as long as the model is run from the directory where the .prm file is located.
 
 ## ASPECT_source
 Contains the source code for the version of ASPECT used to run the models. A guide to compiling ASPECT can be found in the ASPECT manual at ([https://aspect-documentation.readthedocs.io/en/latest/user/install/index.html](https://aspect-documentation.readthedocs.io/en/latest/user/install/index.html)).
