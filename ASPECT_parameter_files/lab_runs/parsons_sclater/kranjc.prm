@@ -14,13 +14,7 @@ set Max nonlinear iterations                   = 25
 set Max nonlinear iterations in pre-refinement = 4
 
 set Resume computation                         = auto
-
-subsection Solver parameters
-  subsection Newton solver parameters
-    set Max pre-Newton nonlinear iterations = 5
-  end
-end
-
+ 
 
 subsection Solver parameters
   subsection Stokes solver parameters
@@ -34,13 +28,15 @@ subsection Solver parameters
   end
 
   subsection Newton solver parameters
-    set Maximum linear Stokes solver tolerance = 1e-2 # try setting to 1e-9
+    set Maximum linear Stokes solver tolerance = 1e-2 
     set Use Eisenstat Walker method for Picard iterations = false
+    set Max pre-Newton nonlinear iterations = 5
   end
 end
 
 
 # Model Geometry
+# Model Geometry, a 1200 km x 1500 km x 1200 km box
 subsection Geometry model
   set Model name = box
   subsection Box
@@ -57,12 +53,14 @@ subsection Formulation
   set Enable elasticity = true
 end
 
+# ASPECT requires 6 compositional fields to track the viscoelastic stresses
 subsection Compositional fields
   set Number of fields = 7
-  set Names of fields = ve_stress_xx, ve_stress_yy, ve_stress_zz, ve_stress_xy, ve_stress_xz, ve_stress_yz, fluid
+  set Names of fields = ve_stress_xx, ve_stress_yy, ve_stress_zz, ve_stress_xy, ve_stress_xz, ve_stress_yz, background_material
 end
 
 # Mesh Refinement 
+# Mesh Refinement, refine the mesh within the lithosphere and along the ridge axis
 subsection Mesh refinement
   set Initial adaptive refinement              = 2
   set Initial global refinement                = 1
@@ -86,12 +84,14 @@ subsection Mesh deformation
 end
 
 # Boundary Velocity Model
+# Boundary Velocity Model.
 subsection Boundary velocity model
   set Zero velocity boundary indicators = bottom
 end
 
 # Boundary Traction Model
 
+# Boundary Traction Model. Impose tractions of the top boundary for the growing Hawaiian Islands, and open the 4 side boundaries
 subsection Boundary traction model
   set Prescribed traction boundary indicators = top z: infill ascii data, right: initial lithostatic pressure, back: initial lithostatic pressure, left: initial lithostatic pressure, front: initial lithostatic pressure
 end
@@ -99,10 +99,10 @@ end
 subsection Boundary traction model
   subsection Infill ascii data
 
-    set Rock density                      = 2800
-    set Sediment density                  = 2300
-    set Height for specifying rock infill = 500
-    set Background density                = 0
+    set Rock density                      = 2800 # Density of rock infill
+    set Sediment density                  = 2300 # Density of sediment infill
+    set Height for specifying rock infill = 500 # Rock infill if the topography is greater than 500 m
+    set Background density                = 0 # Background density is 0, we already account for the effect of water when imposing the traction from the load
 
     subsection Ascii data model
       set Data directory              = ../../../data_files/aspect_traction_files/
@@ -118,6 +118,7 @@ subsection Boundary traction model
   end
 end
 
+# Boundary Temperature Model. Fix the temperature at the top and bottom boundaries.
 subsection Boundary temperature model
   set Fixed temperature boundary indicators = top, bottom
   set List of model names = initial temperature
@@ -127,6 +128,9 @@ subsection Boundary temperature model
   end
 end
 
+# Initial Temperature Model. Initialize the temperature using the plate cooling model
+# of either Parsons & Sclater 1977 or Stein & Stein 1992 and the age of the seafloor
+# provided in initial_temperature_agemap.txt.
 subsection Initial temperature model
   set Model name = plate cooling
   subsection Plate cooling
@@ -139,6 +143,8 @@ subsection Initial temperature model
   end
 end
 
+# Material Model. Visco-elastic-plastic material with high-temperature 
+# dislocation creep and low-temperature plasticity.
 subsection Material model
 
   set Model name = visco plastic
@@ -186,6 +192,7 @@ subsection Material model
   end
 end
 
+# Gravity Model. Constant 9.81 m/s2
 subsection Gravity model
   set Model name = vertical
   subsection Vertical
