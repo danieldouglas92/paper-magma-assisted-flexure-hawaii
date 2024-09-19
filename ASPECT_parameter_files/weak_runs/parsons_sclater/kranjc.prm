@@ -37,9 +37,9 @@ end
 subsection Geometry model
   set Model name = box
   subsection Box
-    set X repetitions = 20
-    set Y repetitions = 25
-    set Z repetitions = 20
+    set X repetitions = 10
+    set Y repetitions = 12
+    set Z repetitions = 24
     set X extent      = 1200e3
     set Y extent      = 1500e3
     set Z extent      = 1200e3
