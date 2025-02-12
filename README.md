@@ -34,4 +34,5 @@ Contains the source code for the version of ASPECT used to run the models. A gui
 ## data_files
 Contains ASCII data files which are read by ASPECT during model runs to prescribe the topographic load of the growing Hawaiian Islands (aspect_traction_files), the initial thermal state of the model, and to heat the lithosphere locally beneath the Hawaiian Islands (aspect_heating_files). Within aspect_heating_files, there are 3 directories which prescribe heating equivalent to a 30 Myr reduction in seafloor age, a 50 Myr reduction in seafloor age, or a 70 Myr reduction in seafloor age.
 
-## Final_data
+## seismic_and_coral_data
+Contains observations used to constrain the numerical models. `Adjusted_east.txt`,  `Adjusted_mid.txt`, and `Adjusted_west.txt` contain the depth to the top of the oceanic crust from reprocessed seismic reflections from Cilli et al., (2023). `cartesian_corrected_hawaii_moho.txt` contain the imaged Moho obtained from tomographic inversions along Line 1 from MacGregor et al., (2023). `cartesian_corrected_kaena_moho.txt` contain the imaged Moho obtained from tomographic inversions along Line 2 from Dunn et al., (2024). The files `correction_basement_MCSX.txt`, where X=1,2,3,4,5,6,7,8, represent the top of the oceanic crust from seismic reflections from Boston et al., (in review).
