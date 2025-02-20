@@ -17,7 +17,7 @@ Cilli, P.,
 which is currently in review.
 
 # Software
-Our numerical simulations were run using the open source geodynamics software ASPECT ([https://aspect.geodynamics.org/](https://aspect.geodynamics.org/)). Specifically, we utilize a branch of the developmental versions of ASPECT (2.6.0-pre) with a copy of the the source code included in this repository.
+Our numerical simulations were run using the open source geodynamics software ASPECT ([https://aspect.geodynamics.org/](https://aspect.geodynamics.org/)). Specifically, we utilize a branch of the developmental versions of ASPECT (2.6.0-pre) with a copy of the the source code included in this repository and on Zenodo [![DOI](https://zenodo.org/badge/835081143.svg)](https://doi.org/10.5281/zenodo.14897977).
 
 # Overview
 The source code and all input files required to reproduce the results from Douglas et al., (2024), "Magma-Assisted Flexure of Hawaiian Lithosphere Inferred From Three-Dimensional Models of Lithospheric Flexure Constrained by Active Souce Seismic Data" submitted to *JGR: Solid Earth* is contained within this repository. The contents of this repository is outlined below.
